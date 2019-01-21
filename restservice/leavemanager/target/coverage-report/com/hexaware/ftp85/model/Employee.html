@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Employee.java</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../coverage.css'/>
+  <link rel='shortcut icon' type='image/png' href='../../../../logo.png'/>
+  <script type='text/javascript' src='../../../../coverage.js'></script>
+  <script type='text/javascript' src='../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption>leavemanager\src\main\java\com\hexaware\ftp85\model\Employee.java</caption>
+    <tr>
+      <td class='line'>1</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package com.hexaware.ftp85.model;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import com.hexaware.ftp85.persistence.DbConnection;
+import com.hexaware.ftp85.persistence.EmployeeDAO;
+
+import java.util.Objects;
+import java.util.List;
+import java.util.Date;
+</div><span>import ...</span></pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+ * Employee class to store employee personal details.
+ * @author hexware
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>14</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>public class Employee {</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * empId to store employee id.
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>19</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private int <span class='instance covered' title='Reads: 21 Writes: 20'>empId</span>;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>20</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private String <span class='instance covered' title='Reads: 17 Writes: 20'>empName</span>;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>21</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private String <span class='instance covered' title='Reads: 17 Writes: 20'>empEmail</span>;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>22</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private String <span class='instance covered' title='Reads: 17 Writes: 20'>empGender</span>;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>23</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private String <span class='instance covered' title='Reads: 17 Writes: 20'>empMob</span>;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>24</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private Date <span class='instance covered' title='Reads: 17 Writes: 20'>empDob</span>;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>25</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private Date <span class='instance covered' title='Reads: 18 Writes: 20'>empJdate</span>;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>26</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private String <span class='instance covered' title='Reads: 17 Writes: 20'>empDept</span>;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>27</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private int <span class='instance covered' title='Reads: 25 Writes: 20'>empLbal</span>;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>28</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private int <span class='instance covered' title='Reads: 25 Writes: 20'>empMgrId</span>;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Constructor.
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>33</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l33s0'>  public Employee() {</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployeeSetters: 76</li>
+          <li>com.hexaware.ftp85.model.LeaveDetailsTest#leaveDetailsSetter: 93</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>35</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l35s0'>  }</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployeeSetters: 76</li>
+          <li>com.hexaware.ftp85.model.LeaveDetailsTest#leaveDetailsSetter: 93</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>36</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>37</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final boolean equals(final Object obj) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>38</td><td class='count'>8</td>
+      <td><pre class='prettyprint jmp'>    <span id='l38s0' title='Executions: 8' class='covered cp' onclick='showHide(this,0)'>if (obj == null)</span> {</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployeeSetters: 99, 101</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testIncrement: 248</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testDecrement: 280</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEquals: 118, 119, 120</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testListById: 215</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>39</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l39s0'>      return false;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployeeSetters: 99</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>40</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>41</td><td class='count'>7</td>
+      <td><pre class='prettyprint jmp'>    <span id='l41s0' title='Executions: 7' class='covered cp' onclick='showHide(this,0)'>if (getClass() != obj.getClass())</span> {</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployeeSetters: 101</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testIncrement: 248</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testDecrement: 280</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEquals: 118, 119, 120</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testListById: 215</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>42</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l42s0'>      return false;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployeeSetters: 101</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>43</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>44</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l44s0'>    Employee emp = (Employee) obj;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testIncrement: 248</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testDecrement: 280</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEquals: 118, 119, 120</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testListById: 215</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>45</td><td class='count'>6</td>
+      <td><pre class='prettyprint jmp'>    <span id='l45s0' title='Executions: 6' class='covered cp' onclick='showHide(this,0)'>if (Objects.equals(empId, emp.empId)</span></pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testIncrement: 248</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testDecrement: 280</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEquals: 118, 119, 120</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testListById: 215</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>46</td><td class='count'>4</td>
+      <td><pre class='prettyprint jmp'>        && <span id='l46s0' title='Executions: 4' class='covered cp' onclick='showHide(this,0)'>Objects.equals(empName, emp.empName)</span></pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testIncrement: 248</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testDecrement: 280</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEquals: 118</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testListById: 215</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>47</td><td class='count'>4</td>
+      <td><pre class='prettyprint jmp'>        && <span id='l47s0' title='Executions: 4' class='covered cp' onclick='showHide(this,0)'>Objects.equals(empEmail, emp.empEmail)</span></pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testIncrement: 248</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testDecrement: 280</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEquals: 118</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testListById: 215</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>48</td><td class='count'>4</td>
+      <td><pre class='prettyprint jmp'>        && <span id='l48s0' title='Executions: 4' class='covered cp' onclick='showHide(this,0)'>Objects.equals(empGender, emp.empGender)</span></pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testIncrement: 248</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testDecrement: 280</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEquals: 118</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testListById: 215</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>49</td><td class='count'>4</td>
+      <td><pre class='prettyprint jmp'>        && <span id='l49s0' title='Executions: 4' class='covered cp' onclick='showHide(this,0)'>Objects.equals(empMob, emp.empMob)</span></pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testIncrement: 248</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testDecrement: 280</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEquals: 118</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testListById: 215</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>50</td><td class='count'>4</td>
+      <td><pre class='prettyprint jmp'>        && <span id='l50s0' title='Executions: 4' class='covered cp' onclick='showHide(this,0)'>Objects.equals(empDob, emp.empDob)</span></pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testIncrement: 248</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testDecrement: 280</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEquals: 118</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testListById: 215</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>51</td><td class='count'>4</td>
+      <td><pre class='prettyprint jmp'>        && <span id='l51s0' title='Executions: 4' class='covered cp' onclick='showHide(this,0)'>Objects.equals(empJdate, emp.empJdate)</span></pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testIncrement: 248</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testDecrement: 280</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEquals: 118</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testListById: 215</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>52</td><td class='count'>4</td>
+      <td><pre class='prettyprint jmp'>        && <span id='l52s0' title='Executions: 4' class='covered cp' onclick='showHide(this,0)'>Objects.equals(empDept, emp.empDept)</span></pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testIncrement: 248</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testDecrement: 280</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEquals: 118</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testListById: 215</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>53</td><td class='count'>4</td>
+      <td><pre class='prettyprint jmp'>        && <span id='l53s0' title='Executions: 4' class='covered cp' onclick='showHide(this,0)'>Objects.equals(empLbal, emp.empLbal)</span></pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testIncrement: 248</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testDecrement: 280</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEquals: 118</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testListById: 215</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>54</td><td class='count'>4</td>
+      <td><pre class='prettyprint jmp'>        && <span id='l54s0' title='Executions: 4' class='covered cp' onclick='showHide(this,0)'>Objects.equals(empMgrId, emp.empMgrId)) {</span></pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testIncrement: 248</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testDecrement: 280</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEquals: 118</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testListById: 215</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>55</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l55s0'>      return true;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testIncrement: 248</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testDecrement: 280</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEquals: 118</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testListById: 215</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>56</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>57</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l57s0'>    return false;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEquals: 119, 120</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>58</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>60</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>61</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final int hashCode() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>62</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l62s0'>    return Objects.hash(empId, empName, empEmail, empGender, empMob, empDob, empJdate, empDept, empLbal, empMgrId);</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testhashCode: 136x2, 137x2, 138x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>63</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * @param argEmpId to initialize employee id.
+   * @param argEmpName to initialize employee name.
+   * @param argEmpEmail to initialize employee email.
+   * @param argEmpGender to initialize employee gender.
+   * @param argEmpMob to initialize employee mobile.no.
+   * @param argEmpDob to initialize employee date of birth.
+   * @param argEmpJdate to initialize employee joining date.
+   * @param argEmpDept to initialize employee department.
+   * @param argEmpLbal to initialize employee leave balance.
+   * @param argEmpMgrId to initialize employee manager id.
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>77</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Employee(final int argEmpId, final String argEmpName, final String argEmpEmail, final String argEmpGender,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>78</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                  final String argEmpMob, final Date argEmpDob, final Date argEmpJdate, final String argEmpDept,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>79</td><td class='count'>19</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l79s0'>                  final int argEmpLbal, final int argEmpMgrId) {</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testListAllSome: 169x3</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee1: 35</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee2: 56</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testIncrement: 230</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testhashCode: 131, 133, 135</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testDecrement: 262</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEquals: 113, 115</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>80</td><td class='count'>19</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l80s0'>    this.empId = argEmpId;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testListAllSome: 169x3</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee1: 35</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee2: 56</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testIncrement: 230</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testhashCode: 131, 133, 135</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testDecrement: 262</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEquals: 113, 115</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>81</td><td class='count'>19</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l81s0'>    this.empName = argEmpName;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testListAllSome: 169x3</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee1: 35</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee2: 56</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testIncrement: 230</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testhashCode: 131, 133, 135</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testDecrement: 262</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEquals: 113, 115</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>82</td><td class='count'>19</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l82s0'>    this.empEmail = argEmpEmail;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testListAllSome: 169x3</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee1: 35</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee2: 56</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testIncrement: 230</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testhashCode: 131, 133, 135</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testDecrement: 262</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEquals: 113, 115</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>83</td><td class='count'>19</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l83s0'>    this.empGender = argEmpGender;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testListAllSome: 169x3</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee1: 35</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee2: 56</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testIncrement: 230</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testhashCode: 131, 133, 135</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testDecrement: 262</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEquals: 113, 115</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>84</td><td class='count'>19</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l84s0'>    this.empMob = argEmpMob;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testListAllSome: 169x3</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee1: 35</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee2: 56</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testIncrement: 230</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testhashCode: 131, 133, 135</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testDecrement: 262</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEquals: 113, 115</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>85</td><td class='count'>19</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l85s0'>    this.empDob = argEmpDob;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testListAllSome: 169x3</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee1: 35</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee2: 56</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testIncrement: 230</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testhashCode: 131, 133, 135</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testDecrement: 262</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEquals: 113, 115</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>86</td><td class='count'>19</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l86s0'>    this.empJdate = argEmpJdate;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testListAllSome: 169x3</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee1: 35</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee2: 56</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testIncrement: 230</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testhashCode: 131, 133, 135</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testDecrement: 262</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEquals: 113, 115</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>87</td><td class='count'>19</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l87s0'>    this.empDept = argEmpDept;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testListAllSome: 169x3</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee1: 35</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee2: 56</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testIncrement: 230</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testhashCode: 131, 133, 135</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testDecrement: 262</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEquals: 113, 115</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>88</td><td class='count'>19</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l88s0'>    this.empLbal = argEmpLbal;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testListAllSome: 169x3</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee1: 35</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee2: 56</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testIncrement: 230</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testhashCode: 131, 133, 135</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testDecrement: 262</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEquals: 113, 115</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>89</td><td class='count'>19</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l89s0'>    this.empMgrId = argEmpMgrId;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testListAllSome: 169x3</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee1: 35</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee2: 56</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testIncrement: 230</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testhashCode: 131, 133, 135</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testDecrement: 262</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEquals: 113, 115</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>90</td><td class='count'>19</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l90s0'>  }</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testListAllSome: 169x3</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee1: 35</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee2: 56</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testIncrement: 230</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testhashCode: 131, 133, 135</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testDecrement: 262</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEquals: 113, 115</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Gets the EmployeeId.
+   * @return this Employee's ID.
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>96</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final int getEmpId() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>97</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l97s0'>    return empId;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployeeSetters: 88</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee1: 36</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee2: 57</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>98</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   *
+   * @param argEmpId to set employee id.
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>104</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final void setEmpId(final int argEmpId) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>105</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l105s0'>    this.empId = argEmpId;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployeeSetters: 77</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>106</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l106s0'>  }</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployeeSetters: 77</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   *
+   * @param argsEmpName to set employee name.
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>112</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final void setEmpName(final String argsEmpName) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>113</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l113s0'>    this.empName = argsEmpName;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployeeSetters: 78</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>114</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l114s0'>  }</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployeeSetters: 78</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Gets the EmployeeNAME.
+   * @return this Employee's NAME.
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>120</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final String getEmpName() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>121</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l121s0'>    return empName;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployeeSetters: 89</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee1: 37</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee2: 58</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>122</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Gets the EmployeeEmail.
+   * @return this Employee's Email.
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>128</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final String getEmpEmail() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>129</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l129s0'>    return empEmail;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployeeSetters: 90</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee1: 38</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee2: 59</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>130</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   *
+   * @param argEmpEmail to set employee mail id.
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>136</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final void setEmpEmail(final String argEmpEmail) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>137</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l137s0'>    this.empEmail = argEmpEmail;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployeeSetters: 79</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>138</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l138s0'>  }</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployeeSetters: 79</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Gets the EmployeeGender.
+   * @return this Employee's Gender.
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>144</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final String getEmpGender() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>145</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l145s0'>    return empGender;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployeeSetters: 91</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee1: 39</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee2: 60</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>146</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   *
+   * @param argEmpGender to set employee Gender.
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>152</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final void setEmpGender(final String argEmpGender) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>153</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l153s0'>    this.empGender = argEmpGender;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployeeSetters: 80</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>154</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l154s0'>  }</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployeeSetters: 80</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Gets the EmployeeMobile no.
+   * @return this Employee's Mobile no.
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>160</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final String getEmpMob() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>161</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l161s0'>    return empMob;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployeeSetters: 92</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee1: 40</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee2: 61</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>162</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   *
+   * @param argEmpMob to set employee Mobile no.
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>168</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final void setEmpMob(final String argEmpMob) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>169</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l169s0'>    this.empMob = argEmpMob;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployeeSetters: 81</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>170</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l170s0'>  }</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployeeSetters: 81</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Gets the Employee Date of Birth.
+   * @return this Employee's Date of Birth.
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>176</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final Date getEmpDob() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>177</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l177s0'>    return empDob;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployeeSetters: 93</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee1: 41</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee2: 62</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>178</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   *
+   * @param argEmpDob to set employee Date of Birth..
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>184</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final void setEmpDob(final Date argEmpDob) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>185</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l185s0'>    this.empDob = argEmpDob;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployeeSetters: 82</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>186</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l186s0'>  }</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployeeSetters: 82</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Gets the Employee Joining Date.
+   * @return this Employee's Joining date.
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>192</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final Date getEmpJdate() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>193</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l193s0'>    return empJdate;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployeeSetters: 94</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee1: 42</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee2: 63</li>
+          <li>com.hexaware.ftp85.model.LeaveDetailsTest#testApplySslLeave: 310</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>194</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   *
+   * @param argEmpJdate to set employee Joining date.
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>200</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final void setEmpJdate(final Date argEmpJdate) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>201</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l201s0'>    this.empJdate = argEmpJdate;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployeeSetters: 83</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>202</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l202s0'>  }</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployeeSetters: 83</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Gets the Employee Department.
+   * @return this Employee's Department.
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>208</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final String getEmpDept() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>209</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l209s0'>    return empDept;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployeeSetters: 95</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee1: 43</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee2: 64</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>210</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   *
+   * @param argEmpDept to set employee Department.
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>216</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final void setEmpDept(final String argEmpDept) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>217</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l217s0'>    this.empDept = argEmpDept;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployeeSetters: 84</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>218</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l218s0'>  }</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployeeSetters: 84</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Gets the Employee leave balance.
+   * @return this Employee's leave balance.
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>224</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final int getEmpLbal() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>225</td><td class='count'>11</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l225s0'>    return empLbal;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployeeSetters: 96</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee1: 44</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee2: 65</li>
+          <li>com.hexaware.ftp85.model.LeaveDetailsTest#testApplySslLeave: 310</li>
+          <li>com.hexaware.ftp85.model.LeaveDetailsTest#testApplyLeave: 238, 240, 242, 244, 248, 250</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>226</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   *
+   * @param argEmpLbal to set employee leave balance.
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>232</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final void setEmpLbal(final int argEmpLbal) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>233</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l233s0'>    this.empLbal = argEmpLbal;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployeeSetters: 85</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>234</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l234s0'>  }</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployeeSetters: 85</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Gets the Employee Manager Id.
+   * @return this Employee's Manager Id.
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>240</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final int getEmpMgrId() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>241</td><td class='count'>11</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l241s0'>    return empMgrId;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployeeSetters: 97</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee1: 45</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployee2: 66</li>
+          <li>com.hexaware.ftp85.model.LeaveDetailsTest#testApplySslLeave: 310</li>
+          <li>com.hexaware.ftp85.model.LeaveDetailsTest#testApplyLeave: 238, 240, 242, 244, 248, 250</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>242</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   *
+   * @param argEmpMgrId to set employee Manager id.
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>248</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final void setEmpMgrId(final int argEmpMgrId) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>249</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l249s0'>    this.empMgrId = argEmpMgrId;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployeeSetters: 86</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>250</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l250s0'>  }</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testEmployeeSetters: 86</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * The dao for employee.
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>255</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private static EmployeeDAO dao() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>256</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l256s0'>    DbConnection db = new DbConnection();</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.LeaveDetailsTest#testApproveDeny: 491</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>257</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l257s0'>    return db.getConnect().onDemand(EmployeeDAO.class);</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.LeaveDetailsTest#testApproveDeny: 491</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>258</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * list all employee details.
+   * @return all employees' details
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>264</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public static Employee[] listAll() {</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>266</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l266s0'>    List&lt;Employee> es = dao().list();</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testListAllSome: 188</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testListAllEmpty: 158</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>267</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l267s0'>    return es.toArray(new Employee[es.size()]);</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testListAllSome: 188</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testListAllEmpty: 158</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>268</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * list employee details by id.
+   * @param empID id to get employee details.
+   * @return Employee
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>275</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public static Employee listById(final int empID) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>276</td><td class='count'>13</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l276s0'>    return dao().find(empID);</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testIncrement: 247</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testDecrement: 279</li>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testListById: 214, 217</li>
+          <li>com.hexaware.ftp85.model.LeaveDetailsTest#testApplySslLeave: 310</li>
+          <li>com.hexaware.ftp85.model.LeaveDetailsTest#testApplyLeave: 238, 240, 242, 244, 246</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>277</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Update employee LeaveBalance.
+   * @param empId id to get employee id.
+   * @param leaNdays to get employee leavenoofdays.
+   * @return String.
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>285</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public static String increment(final int empId, final int leaNdays) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>286</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l286s0'>    dao().increment(empId, leaNdays);</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testIncrement: 249</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>287</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l287s0'>    return "Leave Balance Updated";</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testIncrement: 249</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>288</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+  * Method for Approve or Deny the Leave.
+  * @param argLeaNdays to enter LeaveId to approve/deny.
+  * @param argEmpId to enter status to approve/deny.
+  * @return a string value.
+  */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>296</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public static String decrementBalance(final int argLeaNdays, final int argEmpId) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>297</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l297s0'>    int ndays = argLeaNdays;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testDecrement: 281</li>
+          <li>com.hexaware.ftp85.model.LeaveDetailsTest#testApplyLeave: 238, 252</li>
+          <li>com.hexaware.ftp85.model.LeaveDetailsTest#testApproveDeny: 491</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>298</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l298s0'>    int id = argEmpId;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testDecrement: 281</li>
+          <li>com.hexaware.ftp85.model.LeaveDetailsTest#testApplyLeave: 238, 252</li>
+          <li>com.hexaware.ftp85.model.LeaveDetailsTest#testApproveDeny: 491</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>299</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l299s0'>    dao().decrement(id, ndays);</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testDecrement: 281</li>
+          <li>com.hexaware.ftp85.model.LeaveDetailsTest#testApplyLeave: 238, 252</li>
+          <li>com.hexaware.ftp85.model.LeaveDetailsTest#testApproveDeny: 491</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>300</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l300s0'>    return "Leave Balance Updated";</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp85.model.EmployeeTest#testDecrement: 281</li>
+          <li>com.hexaware.ftp85.model.LeaveDetailsTest#testApplyLeave: 238, 252</li>
+          <li>com.hexaware.ftp85.model.LeaveDetailsTest#testApproveDeny: 491</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>301</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>303</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>
